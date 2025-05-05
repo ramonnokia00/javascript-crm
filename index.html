@@ -41,9 +41,62 @@
                 class="w-full h-full bg-black/70 absolute top-0 left-0 duration-200 opacity-0 invisible">
             </div>
             <div id="gaveta" class="min-w-[350px] h-screen bg-white p-4 absolute top-0 -right-full duration-200">
-                <h3 onclick="mostrarOverlay()" class="flex justify-between items-center">Cadastro
+                <h3 onclick="mostrarOverlay()" class="flex justify-between items-center text-2xl">Cadastro
                     <box-icon name='x' class=" w-[40px] h-[40px] bg-pink-600 fill-white p-2 cursor-pointer rounded-full hover:bg-pink-700 duration-200"></box-icon>
                 </h3>
+                <div>
+                    <h3  onclick="mostrarNovocadastro()" class="flex justify-between pt-4 text-2xl"> Novo Ciente
+                    <box-icon name='comment-add' class="w-[40px] h-[40px] bg-pink-600 fill-white p-2 rounded-full cursor-pointer hover:bg-pink-700 duration-200"></box-icon>
+                </h3>
+                <div id="novocadastro" onclick="mostrarNovocadastro()" class=" transition-all w-full h-full bg-black/70 absolute top-0 left-0 duration-200 opacity-0 invisible">
+                </div>
+                <div id="gavetacadastro" class="min-w-[350px] h-screen bg-white p-4 absolute top-0 -left-full duration-200 text-black invisible  items-center">
+                    <div>
+                    <h3 class="text-xl">Nome Completo:</h3>
+                    <input type="text" class="border-2 border-black" placeholder="Nome">
+                    </div>
+                    <div>
+                        <h3 class="text-xl">Digite Seu Email</h3>
+                    <input type="text" class="border-2 border-black" placeholder="Email">
+                    </div>
+                    <div>
+                        <h3 class="text-xl">Numero Para Contato</h3>
+                    <input type="number" class="border-2 border-black" placeholder="numero">
+                    </div>
+                    <div class="flex gap-2">
+                        <h3>Turno:</h3>
+                        <select name="" id="Turno">
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+                            <option>Noite</option>
+                        </select>
+                        <button
+                    class="bg-pink-600 leading-[40px] rounded text-white px-6 text-[12px] uppercase font-bold hover:bg-pink-700 duration-200  flex gap-3 justify-between items-center" onclick="mostrarNovocadastro()">
+                    Criar<box-icon name='right-arrow-alt' class="fill-white first-line: "></box-icon></button>
+                </div>
+                <div>
+                <table class="mt-5">
+                    <tr>
+                        <th onclick=""></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        
+                    </tr>
+                </table>
+                    </div>
+                </div>
+                
+
+                </div>
+
+                
             </div>
         </div>
 
