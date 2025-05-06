@@ -71,56 +71,46 @@
                     </div>
                     <div id="gavetacadastro"
                         class="min-w-[350px] h-screen bg-white p-4 absolute top-0 -left-full duration-200 text-black invisible  items-center">
-                        <div class="">
-                            <h3 class="text-xl">Nome Completo:</h3>
-                            <input type="text" class="border-2 border-black " placeholder="Nome">
+                        <div onclick="mostrarNovocadastro()">
+                            <box-icon name='x'
+                        class=" w-[40px] h-[40px] bg-pink-600 fill-white p-2 cursor-pointer rounded-full hover:bg-pink-700 duration-200"></box-icon>
                         </div>
-                        <div>
-                            <h3 class="text-xl">Digite Seu Email</h3>
-                            <input type="text" class="border-2 border-black" placeholder="Email">
-                        </div>
-                        <div>
-                            <h3 class="text-xl">Numero Para Contato</h3>
-                            <input type="number" class="border-2 border-black" placeholder="Numero">
-                        </div>
-                        <div class="flex gap-4 mt-4 mb-4">
-                            <h3>Turno:</h3>
-                            <select name="" id="Turno">
-                                <option>Manhã</option>
-                                <option>Tarde</option>
-                                <option>Noite</option>
-                            </select>
-                            <button
-                                class=" bg-pink-600 leading-[40px] rounded text-white px-6 text-[12px] uppercase font-bold hover:bg-pink-700 duration-200  flex gap-3 justify-between items-center"
-                                onclick="mostrarNovocadastro()">
-                                Criar<box-icon name='right-arrow-alt'
-                                    class="fill-white first-line: "></box-icon></button>
-                        </div>
-                        <div class="border-2">
-                            <table class="mt-5">
-                                <tr>
-                                    <th onclick="" id="numero">clique aqui</th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <td onclick="" id="Nome"></td>
-                                    <td onclick="" id="Email"></td>
-                                    <td onclick="" id="contato"></td>
-                                </tr>
-                                <tr>
-
-                                </tr>
-                            </table>
-                        </div>
+                        <form itemref="formcriar" onsubmit="cadastrarCliente(event.target)">
+                            <div class="">
+                                <label class="text-xl">Nome Completo:</label>
+                                <input name="nome" type="text" class="border-2 border-black  focus:outline-pink-600 mb-3 pl-3 w-full rounded h-[40px]" placeholder="Nome" required>
+                            </div>
+                            <div>
+                                <h3 class="text-xl">Digite Seu Email</h3>
+                                <input name="email" type="text" class="border-2 border-black w-full rounded focus:outline-pink-600 mb-2 pl-3 h-[40px]" placeholder="Email" required>
+                            </div>
+                            <div>
+                                <h3 class="text-xl">Numero Para Contato</h3>
+                                <input name="telefone" type="number" class="border-2 border-black focus:outline-pink-600 mb-3 pl-3 w-full h-[40px]" placeholder="(85)900000000" required>
+                            </div>
+                            <div class="mt-2">
+                                <label for="">Ultima compra:</label>
+                                <input name="data" type="text" placeholder="00/00/0000" class="border-2 border-black w-full rounded focus:outline-pink-600 mb-3 pl-3 h-[40px]" required> 
+                            </div>
+                            <div class="flex gap-4 mt-4 mb-4">
+                                <button
+                                    class=" bg-pink-600 leading-[40px] rounded text-white px-6 text-[12px] uppercase font-bold hover:bg-pink-700 duration-200 gap-3 items-center w-full"
+                                    onclick="">
+                                    Criar</button>
+                        </form>
                     </div>
 
+                    <Div>
 
+                    </Div>
                 </div>
 
 
             </div>
+
+
         </div>
+    </div>
 
     </div>
     <script src="index.js"></script>

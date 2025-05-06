@@ -1,25 +1,9 @@
-let clientes = [
-{
-    nome: "conrado",
-    email: "conrado@gmail.com",
-    telefone: "85982007334",
-    data: "05/05/2026",
-},
-{
-    nome: "emanuel",
-    email: "emanuel@gmail.com",
-    telefone: "85954627232",
-    data: "05/05/2027",
-},
-{
-    nome: "Ana",
-    email: "Ana@gmail.com",
-    telefone: "85928281342",
-    data: "05/05/2023",
-},
-]
+
+
+let clientes = sessionStorage.getItem("clientes") ? JSON.parse(sessionStorage.getItem("clientes")) :[];
 function carregarClientes(listaDeClientes) {
     let tbodyElement = document.querySelector("#tabela");
+    tbodyElement.innerHTML = '';
     listaDeClientes.map((cliente)=> {
         tbodyElement.innerHTML += `
         <tr class="*:leading-[40px] border-2">
@@ -34,4 +18,15 @@ function carregarClientes(listaDeClientes) {
                     </tr>`
     })
 }
-carregarClientes(clientes)
+carregarClientes(clientes);
+
+function cadastrarCliente(form) {
+    event.preventDefault();
+    let formData = new FormData(form);
+    let cliente = Object.fromEntries(formData.entries());
+
+    clientes.push(cliente);
+    sessionStorage.setItem("clientes",JSON.stringify(clientes));
+    mostrarOverlay();
+    carregarClientes(clientes)
+}
