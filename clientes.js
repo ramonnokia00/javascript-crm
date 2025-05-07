@@ -1,6 +1,18 @@
 
 
 let clientes = sessionStorage.getItem("clientes") ? JSON.parse(sessionStorage.getItem("clientes")) :[];
+
+function buscarClientes() {
+    fetch("http://localhost:3000/clientes")
+    .then((response) => response.json())
+    .then((lista) => {
+        clientes = lista;
+        carregarClientes(clientes);
+        
+    })
+}
+buscarClientes();
+
 function carregarClientes(listaDeClientes) {
     let tbodyElement = document.querySelector("#tabela");
     tbodyElement.innerHTML = '';
